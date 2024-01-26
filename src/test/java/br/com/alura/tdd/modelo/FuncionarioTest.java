@@ -4,6 +4,7 @@
  */
 package br.com.alura.tdd.modelo;
 
+import davi.testesUnitarios.modelo.Funcionario;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import org.junit.After;

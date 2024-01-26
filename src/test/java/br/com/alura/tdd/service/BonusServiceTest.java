@@ -1,7 +1,8 @@
 
 package br.com.alura.tdd.service;
 
-import br.com.alura.tdd.modelo.Funcionario;
+import davi.testesUnitarios.service.BonusService;
+import davi.testesUnitarios.modelo.Funcionario;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import org.junit.After;
@@ -45,7 +46,10 @@ public class BonusServiceTest {
      */
     @Test
     public void testCalcularBonus() {
-        funcionario = new Funcionario("Fulano", LocalDate.now(), new BigDecimal("2500.00"));
+        funcionario = new Funcionario();
+        funcionario.setNome("Fulano");
+        funcionario.setDataAdmissao(LocalDate.now());
+        funcionario.setSalario(new BigDecimal("2500.00"));
         BigDecimal expResult = new BigDecimal("250.00");
         BigDecimal result = instance.calcularBonus(funcionario);
         assertEquals(expResult, result);
@@ -57,7 +61,10 @@ public class BonusServiceTest {
     @Test
     public void testCalcularBonusZerado() {
         System.out.println("calcularBonusZerado");
-        funcionario = new Funcionario("Fulano", LocalDate.now(), new BigDecimal("25000.00"));
+        funcionario = new Funcionario();
+        funcionario.setNome("Fulano");
+        funcionario.setDataAdmissao(LocalDate.now());
+        funcionario.setSalario(new BigDecimal("25000.00"));
         //primeira maneira
         //assertThrows(IllegalArgumentException.class, () -> instance.calcularBonus(funcionario));
         //segunda maneira]

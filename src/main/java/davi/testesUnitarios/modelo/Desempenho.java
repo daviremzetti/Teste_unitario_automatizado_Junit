@@ -1,5 +1,5 @@
 
-package br.com.alura.tdd.modelo;
+package davi.testesUnitarios.modelo;
 
 import java.math.BigDecimal;
 
